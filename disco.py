@@ -553,36 +553,36 @@ try:
 except:
     if not os.path.exists("CLIP"):
         gitclone("https://github.com/openai/CLIP")
-    sys.path.append(f'{PROJECT_DIR}/CLIP')
+sys.path.append(f'{PROJECT_DIR}/CLIP')
 
 try:
     import open_clip
 except:
     if not os.path.exists("open_clip/src"):
         gitclone("https://github.com/mlfoundations/open_clip.git")
-    sys.path.append(f'{PROJECT_DIR}/open_clip/src')
     import open_clip
+sys.path.append(f'{PROJECT_DIR}/open_clip/src')
 
 try:
     from guided_diffusion.script_util import create_model_and_diffusion
 except:
     if not os.path.exists("guided-diffusion"):
         gitclone("https://github.com/kostarion/guided-diffusion")
-    sys.path.append(f'{PROJECT_DIR}/guided-diffusion')
+sys.path.append(f'{PROJECT_DIR}/guided-diffusion')
 
 try:
-    from resize_right import resize
+    from ResizeRight import resize
 except:
     if not os.path.exists("ResizeRight"):
         gitclone("https://github.com/assafshocher/ResizeRight.git")
-    sys.path.append(f'{PROJECT_DIR}/ResizeRight')
+sys.path.append(f'{PROJECT_DIR}/ResizeRight')
 
 try:
     import py3d_tools
 except:
     if not os.path.exists('pytorch3d-lite'):
         gitclone("https://github.com/MSFTserver/pytorch3d-lite.git")
-    sys.path.append(f'{PROJECT_DIR}/pytorch3d-lite')
+sys.path.append(f'{PROJECT_DIR}/pytorch3d-lite')
 
 try:
     from midas.dpt_depth import DPTDepthModel
@@ -593,7 +593,7 @@ except:
         shutil.move('MiDaS/utils.py', 'MiDaS/midas_utils.py')
     if not os.path.exists(f'{model_path}/dpt_large-midas-2f21e586.pt'):
         wget("https://github.com/intel-isl/DPT/releases/download/1_0/dpt_large-midas-2f21e586.pt", model_path)
-    sys.path.append(f'{PROJECT_DIR}/MiDaS')
+sys.path.append(f'{PROJECT_DIR}/MiDaS')
 
 try:
     sys.path.append(PROJECT_DIR)
@@ -627,7 +627,7 @@ import torchvision.transforms as T
 import torchvision.transforms.functional as TF
 from tqdm.notebook import tqdm
 from CLIP import clip
-from resize_right import resize
+from ResizeRight import resize
 from guided_diffusion.script_util import create_model_and_diffusion, model_and_diffusion_defaults
 from datetime import datetime
 import numpy as np
